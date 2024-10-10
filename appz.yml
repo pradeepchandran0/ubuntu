@@ -1,0 +1,29 @@
+app:
+    name: ubuntu
+    code: UBUNTU
+    notify: appzdev@cloudbourne.co
+
+build:
+    version: 0.4
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: ubuntu-22.04
+
+deploy:
+    context: pradeepchandran0/DEV
+    type: statefulset
+    replicas: 1
+    ingress: none
+    port:
+    - 80
+
+volumes:
+
+  - claim: ubuntu-data
+    mount: /appz/data
+    name: data
+    size: 5Gi
+
+properties:
+    revision: 26
