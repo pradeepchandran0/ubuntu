@@ -13,7 +13,7 @@ build:
 deploy:
     context: pradeepchandran0/DEV
     type: statefulset
-    #resources: small
+    resources: small 
     replicas: 1
     ingress: none
     port:
