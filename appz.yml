@@ -8,11 +8,12 @@ build:
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: ubuntu-22.04
+    image_template: ubuntu-20.04
 
 deploy:
     context: pradeepchandran0/DEV
     type: statefulset
+    resources: small
     replicas: 1
     ingress: none
     port:
